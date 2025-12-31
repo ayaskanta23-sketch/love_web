@@ -13,6 +13,10 @@ function unlock() {
   if (document.getElementById("password").value === PASSWORD) {
     document.getElementById("lock").classList.add("hidden");
     document.getElementById("app").classList.remove("hidden");
+
+    // START MUSIC IMMEDIATELY AFTER FIRST CLICK
+    music.volume = 0.5;
+    music.play();
   } else {
     document.getElementById("error").innerText = "Wrong password 😢";
   }
@@ -50,3 +54,4 @@ setInterval(() => {
   document.body.appendChild(heart);
   setTimeout(() => heart.remove(), 6000);
 }, 400);
+
